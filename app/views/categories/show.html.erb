@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Grayscale - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- Custom Fonts -->
+    
+     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min2.css" rel="stylesheet">
+    <link href="/css/bootstrap.min1.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+     <link href="/css/grayscale.css" rel="stylesheet">
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="/css/agency.css" type="text/css">
+     <link href="/css/font-awesome.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="/css/animate.css">
+         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+      
+     <!-- theam.css-->
+    
+      <link href="/css/slick.css" rel="stylesheet">  
+
+      <link href="/css/theme.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+       
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+        <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/creative.css" type="text/css">
+     
+<!-- for fontawesome icon css file -->
+   
+    <!-- for content animate css file -->
+   
+    <!-- google fonts  -->
+    <!--<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>--> 
+     <!-- slick slider css file -->
+         
+    <!-- main site css file -->    
+   
+<!-- Custom Fonts -->
+ 
+
+    <!-- Custom CSS--> 
+    <!--<link rel="stylesheet" href="css/creative.css" type="text/css">-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
+
+
+    <!-- Custom CSS -->
+   
+    <!-- Custom Fonts -->
+
+   <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/creative.css" type="text/css">
+     <link rel="stylesheet" href="/css/agency.css" type="text/css">
+     <!-- theam.css-->
+      <link href="/css/theme.css" rel="stylesheet">
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                </button>
+                </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="#mainContain"><%= @category.name %></a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="#port">Trending News</a>
+                    </li>
+                   
+                    <li>
+                        <a class="page-scroll" href="tweets/index">HOME</a>
+                    </li>
+                    <% if current_user %>
+                    <li>
+                        <a class="page-scroll" href="tweets/index">PERSONALIZED NEWS</a>
+                    </li>
+                    <% else %>
+                    <li>
+                        <a class="page-scroll" href="/auth/twitter">PERSONALIZED</a>
+                    </li>
+                    <% end %>
+                    <li>
+                        <a class="page-scroll" href="#about">ABOUT</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">CONTACT</a>
+                    </li>
+                    <% if current_user %>
+                    <li>
+                        <a class="page-scroll" href="<%= signout_path %>">SIGN OUT</a>
+                    </li>
+                    <% else %>
+                    <li>
+                        <a class="page-scroll" href="/auth/twitter">SIGN IN WITH TWITTER</a>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+ <header id="mainContain" >
+ <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+  <div class="content_top_right"> 
+            <div class="row no-gutter">
+                <ul class="featured_nav wow fadeInDown">
+
+                  <h3><%= @category.name %></h3 >
+                  <% @recent_news.each do |i| %>
+                    <% result = Google::Search::Image.new(:query => i.text, :image_size => :xlarge) %>
+                    <% r = result.first(1) %>
+                    <% r.each do |image| %>
+                     <li>
+                      <%= image_tag "#{image.uri}",:size => "300x215" %>
+                       <div class="title_caption">
+                        <a href = "<%= i.children[0].attributes['url'].to_s%>" target = "_blank" >
+                           <%= i.text %>
+                        </a>
+                       </div>
+                     </li>
+                    <% end %>
+                  <% end %>
+                </ul> 
+              </div>
+            </div>
+          </div>
+        </div>
+ </section>
+ <section class="no-padding" id="port">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+              <% for category in Category.all %>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="/categories/<%= category.id %>" class="portfolio-box">
+                        <img src="/images/categories/<%= category.image_url %>" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    <%= category.name %>
+                                </div>
+                                <div class="project-name">
+                                    Top News
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <% end %>
+            </div>
+        </div>
+   </section>
+      <!-- About Section -->
+    <section class="no-padding" id="about">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About Us</h2>
+                    <h3 class="section-subheading text-muted">Know more about us and our work!</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="/img/about/1.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>What We Do:</h4>
+                                   <!-- <h4 class="subheading">What We Do:</h4>-->
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Personalised News Recommender is an innovative news recommendation platform which recommends news articles based on your tweets.We bring the news articles from some of the best news source in the world.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="/img/about/4.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>How it all began!</h4>
+                                    <!--<h4 class="subheading">Phase Two Expansion</h4> -->
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">We started the whole news recommendation process as a part of our final year project under the watchful guidance of Prof.Saritha K.</p>
+                                </div>
+                            </div>
+                        </li>-->
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Be Part
+                                    <br>Of Our
+                                    <br>Story!</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                  <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our Amazing Team</h2>
+                    <h3 class="section-subheading text-muted">Guided by prof.Saritha K</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="/img/team/2.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Sanjana G</h4>
+                        <p class="text-muted">1PE11IS082</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/sanjana.ganesh.35?fref=ts"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="/img/team/4.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Vishak U</h4>
+                        <p class="text-muted">1PE11IS108</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/vishak.uday"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="/img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Srikanth Desai</h4>
+                        <p class="text-muted">1PE12IS413</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100002595159594&fref=ts&ref=br_tf"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+  <!-- Contact Section -->
+    <section class="no-padding" id="contact">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="primary">
+                    <p>Want to get in touch with us? great!Here's how you can get in touch with us.</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                    <p>8884704847</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:your-email@your-domain.com">vishakuday47@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <!--div id="map"></div-->
+<!-- jQuery -->
+     <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Personalized News Recommender 2015</p>
+        </div>
+    </footer>
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+<script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/jquery.fittext.js"></script>
+    <!--<script src="js/wow.min.js"></script>-->
+    <script src="/js/wow.min.js"></script>
+<!-- bootstrap js file -->
+ <!-- <script src="js/bootstrap.min2.js"></script>--> 
+  <!-- slick slider js file -->
+  <script src="/js/slick.min.js"></script> 
+  
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/grayscale.js"></script>
+    <script src="/js/creative.js"></script>
+     <script src="/js/custom.js"></script> 
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--
+<br /><br />
+<div>
+<p id="notice"><%= notice %></p>
+<br />
+<!--<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<p>
+  <strong>Google url:</strong>
+  <%= @category.google_url %>
+</p>
+<br />
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>-->
+<!--<br />
+ <h3><%= @category.name %></h3 >
+   <% @recent_news.each do |i| %>
+     <h4><%= i.text %></h4>
+     <% result = Google::Search::Image.new(:query => i.text, :image_size => :xlarge) %>
+         <% r = result.first(1) %>
+         <% r.each do |image| %>
+                <%= image_tag "#{image.uri}",:size => "300x215" %>
+         <% end %><br />
+     <%= link_to i.children[0].attributes['url'].to_s, i.children[0].attributes['url'].to_s %> <br />
+   <% end %>
+<br>
+</div>
