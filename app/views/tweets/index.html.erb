@@ -1,6 +1,6 @@
 
 <head>
-
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Personalized Copy</title>
+
     <link href="/css/bootstrap.min.css" rel="stylesheet">
    
     <link href="/css/bootstrap.min1.css" rel="stylesheet">
@@ -70,9 +71,6 @@
                      <li>
                         <a class="page-scroll" href="#personalized">PERSONALIZED NEWS</a>
                     </li>
-                     <li>
-                        <a class="page-scroll" href="#myCarousel">HOME</a>
-                    </li>
                     <% else %>
                      <li>
                         <a class="page-scroll" href="#myCarousel">HOME</a>
@@ -105,6 +103,7 @@
         </div>
         <!-- /.container -->
     </nav>
+<% if !current_user %>
 <header id="myCarousel" class="carousel slide">
    <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -143,8 +142,8 @@
                  <div class="header alt vert">
                
                 <div class="carousel-caption"> <% if !current_user %>
-                <a href="/auth/twitter"class="btn btn-default btn-lg">Sign in with twitter</a><% end %>
-                </div>
+                <a href="/auth/twitter"class="btn btn-default btn-lg">Sign in with twitter</a>
+                </div><% end %>
                </div>
         </div>
 </div>
@@ -159,14 +158,11 @@
         </a>
 
 </header>
+<% end %>
 <% if current_user %> 
+  
 <header id="personalized" >
-   <div>
-    <button class="btn btn-primary btn-lg" data-toggle="modal" 
-          data-target="#myModal">
-       Feel Like Tweeting
-    </button>
-  </div>  
+   
 
 <br/></div >
 
@@ -200,17 +196,18 @@
          <% end %>
         </div>
 </section> </header>
-<% else %>
- <br /><br />
- <!--<h2> Recent News </h2>
- <div>
- <% @categories = Category.all %>
-   <% @categories.each do |category| %>
-      <h3><%= link_to category.name, category %></h3 ><br />
-   <% end %>
-</div>-->
 
  <br />
+ <!-- This one works but it goes to a new page with basic html-->
+<!--<h4> Feel like tweeting !</h4>
+<a href="tweets/new" class="btn btn-info" role="button">Tweet</a> -->
+<br />
+ <!-- This one dosent work modal appearing and dissappearing-->
+<!--<button class="btn btn-primary btn-lg" data-toggle="modal" 
+          data-target="#myModal" >
+       Feel Like Tweeting
+</button>-->
+
 <% end %>
 
 <section class="no-padding" id="port">
@@ -276,7 +273,7 @@
                                     <p class="text-muted">We started the whole news recommendation process as a part of our final year project under the watchful guidance of Prof.Saritha K.</p>
                                 </div>
                             </div>
-                        </li>-->
+                        </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <h4>Be Part
@@ -376,36 +373,33 @@
             <p>Copyright &copy; Personalized News Recommender 2015</p>
         </div>
     </footer>
-    <script src="/js/jquery.js"></script>
-
+    
+    <script>
+    $('.carousel').carousel({
+        interval: 4000 //changes the speed
+    })
+    </script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
-
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/jquery.js"></script>
     <!-- Plugin JavaScript -->
     <script src="/js/jquery.easing.min.js"></script>
-
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
- <!--   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script> -->
-<script src="/js/jquery.easing.min.js"></script>
     <script src="/js/jquery.fittext.js"></script>
-    <!--<script src="js/wow.min.js"></script>-->
-    <script src="/js/wow.min.js"></script>
-<!-- bootstrap js file -->
-  <script src="/js/bootstrap.min2.js"></script> 
-  <!-- slick slider js file -->
-  <script src="/js/slick.min.js"></script> 
   
+    <script src="/js/wow.min.js"></script>
+
+  
+  <!-- slick slider js file -->
+   <script src="/js/slick.min.js"></script> 
+   
 
     <!-- Custom Theme JavaScript -->
     <script src="/js/grayscale.js"></script>
     <script src="/js/creative.js"></script>
-     <script src="/js/custom.js"></script> 
    
-
+    <script src="/js/custom.js"></script> 
 
 </body>
-<div>
-
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
       aria-labelledby="myModalLabel" aria-hidden="true">
      <div class="modal-dialog">
@@ -422,7 +416,6 @@
          </div>
 
           <div class="modal-body">
-           
            
               <div class="form-group">
                 <textarea class="form-control" rows="5" id="tweet_body" name="tweet[body]"></textarea>
@@ -442,7 +435,11 @@
      </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
   </div>
-<br/></div >
+<br/> 
+
+
+
+
 
 
 
